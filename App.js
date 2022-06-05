@@ -17,22 +17,27 @@ export default function App() {
       flexDirection:'row',
       alignItems:'center',
       justifyContent:'space-between',
-      marginVertical:50,
-      marginVertical:25
+      marginVertical:25,
+      marginHorizontal:20
     },
     list:{
       fontSize:14,
       fontWeight:'bold',
       alignItems:'center',
-      justifyContent:'flex-start',
     },
     text:{
-      fontSize:24,
+      fontSize:18,
+      fontWeight:'bold'
+    },
+    textNumber:{
+      fontSize:18,
+      maxWidth:50,
       fontWeight:'bold'
     },
     Image:{
       width: 66,
       height: 58,
+      
     }
   });
   return (

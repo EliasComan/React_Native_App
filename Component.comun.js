@@ -5,12 +5,9 @@ import { ConsultaFectch } from './components/consultaFetch/ConsultaFectch.js';
 import { StatusBar } from 'expo-status-bar';
 
 function ComponentComun( {  style  }) {
-  const [ task, setTaskValue  ]  = useState("")
-  const [ tasks, setTasks ] = useState([])
- 
   return(
 
-      <View >
+      <View style={{marginTop:40}}>
           <StatusBar style="auto" />
           <ConsultaFectch style = {style}/>
       </View>
