@@ -12,16 +12,18 @@ export const ConsultaFectch = ({ style }) => {
         </View>
         <View style={style.list}>
           <Text style={style.text}>{item.name}</Text>
-          <Text style={style.text}>{item.current_price}</Text>
-          <Text
-            style={
-              item.price_change_percentage_24h > 1 ? 
-                style.textGreen
-                :
-                style.textRed
-            }
-          >
-            {item.price_change_percentage_24h}
+          <Text style={style.text}>Price: {item.current_price}</Text>
+          <Text> Last24h:  
+            <Text
+                style={
+                  item.price_change_percentage_24h > 1 ? 
+                    style.textGrenn
+                    :
+                    style.textRed
+                }
+              >
+               {item.price_change_percentage_24h}
+              </Text>
           </Text>
         </View>
         <Button
