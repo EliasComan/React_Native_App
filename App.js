@@ -38,7 +38,17 @@ export default function App() {
       width: 66,
       height: 58,
       
-    }
+    },
+    textGrenn:{ 
+      backgroundColor: 'green',
+      fontSize:18,maxWidth:80,
+      fontWeight:'bold' 
+  },
+  textRed:{
+     backgroundColor: 'red',
+     fontSize:18,maxWidth:80,
+     fontWeight:'bold' 
+  }
   });
   return (
     <ComponentComun style={styles} />

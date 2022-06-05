@@ -15,11 +15,10 @@ export const ConsultaFectch = ({ style }) => {
           <Text style={style.text}>{item.current_price}</Text>
           <Text
             style={
-              item.price_change_percentage_24h > 1
-                ? { backgroundColor: 'green',fontSize:18,maxWidth:80,
-                fontWeight:'bold' }
-                : { backgroundColor: 'red',fontSize:18,maxWidth:80,
-                fontWeight:'bold' }
+              item.price_change_percentage_24h > 1 ? 
+                style.textGreen
+                :
+                style.textRed
             }
           >
             {item.price_change_percentage_24h}
