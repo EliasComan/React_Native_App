@@ -8,7 +8,7 @@ export const ConsultaFectch = ({ style }) => {
     return (
       <View style={style.taskContainer} key={item.id}>
         <View>
-          <Image style={style.Image} source={{ uri: `${item.image}` }} />
+          <Image style={style.Image} source={{ uri: item.image }} />
         </View>
         <View style={style.list}>
           <Text style={style.text}>{item.name}</Text>
