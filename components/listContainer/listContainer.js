@@ -4,10 +4,10 @@ import React, { useEffect, useState } from 'react'
 import { getCriptosFromDatabase } from '../listaFetch/listaFetch'
 import { styles } from '../listaFetch/styles'
 
-export const ListContainer = ({ style }) => {
+export const ListContainer = () => {
   const [dataBase, setDataBase] = useState([])
 
-function deleteItem(itemId) {
+  function deleteItem(itemId) {
     const filterItems = dataBase.filter((item) => item.id != itemId)
     setDataBase(filterItems)
   }
@@ -30,7 +30,7 @@ function deleteItem(itemId) {
                     styles.textRed
                 }
               >
-               {item.price_change_percentage_24h}
+               {item.price_change_percentage_24h}%
               </Text>
           </Text>
         </View>
@@ -44,11 +44,11 @@ function deleteItem(itemId) {
     )
   }
 
-
-
   useEffect(() => {
     getCriptosFromDatabase(setDataBase)
   }, [])
+
+  
   return (
     <View>
       <FlatList data={dataBase}  renderItem={setItems} />

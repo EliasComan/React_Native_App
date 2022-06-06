@@ -38,12 +38,12 @@ export  const styles = StyleSheet.create({
       
     },
     textGrenn:{ 
-      backgroundColor: 'green',
+      backgroundColor: '#48bf84',
       fontSize:18,maxWidth:80,
       fontWeight:'bold' 
   },
   textRed:{
-     backgroundColor: 'red',
+     backgroundColor: '#FB4B4E',
      fontSize:18,maxWidth:80,
      fontWeight:'bold' 
   }

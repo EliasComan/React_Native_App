@@ -3,7 +3,7 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native'
 
-function Lista( ) {
+function List( ) {
   return(
 
       <View style={{marginTop:40}}>
@@ -13,4 +13,4 @@ function Lista( ) {
     )
 }
 
-export default Lista
+export default List
