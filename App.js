@@ -1,4 +1,4 @@
-import List from './components/lista/list.js';
+import List from './components/lista/List';
 
 export default function App() {
   

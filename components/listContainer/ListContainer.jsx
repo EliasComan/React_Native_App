@@ -1,15 +1,30 @@
 import { Button, FlatList, Image, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
-import { getCriptosFromDatabase } from '../listaFetch/listaFetch'
+import { getCriptosFromDatabase } from '../listaFetch/ListaFetch'
 import { styles } from '../listaFetch/styles'
 
 export const ListContainer = () => {
   const [dataBase, setDataBase] = useState([])
+  const [deletedItems, setdeletedItems] = useState([])
+  const [viewDeleted, setViewDeleted] = useState(false)
 
+
+  function handleDeletedItems(itemDeleted) {
+  
+  setdeletedItems([...deletedItems, itemDeleted])
+  }
   function deleteItem(itemId) {
     const filterItems = dataBase.filter((item) => item.id != itemId)
+    const itemDeleted = dataBase.filter(item => item.id === itemId )
+    handleDeletedItems(itemDeleted[0])
+    
     setDataBase(filterItems)
+    
+  }
+  function handleViews() {
+    setViewDeleted(!viewDeleted)
+    
   }
   
  function setItems({ item }) {
@@ -43,15 +58,25 @@ export const ListContainer = () => {
       </View>
     )
   }
-
   useEffect(() => {
     getCriptosFromDatabase(setDataBase)
   }, [])
 
   
   return (
-    <View>
-      <FlatList data={dataBase}  renderItem={setItems} />
+    <View>{
+
+      viewDeleted? 
+      <View>
+        <Button title='View all'  onPress={handleViews}/>
+            <FlatList data={deletedItems}  renderItem={setItems} />
+      </View>
+      :
+      <View>
+        <Button title='View deleted' onPress={ handleViews} />
+        <FlatList data={dataBase}  renderItem={setItems} />
+      </View>
+    }
     </View>
   )
 }
