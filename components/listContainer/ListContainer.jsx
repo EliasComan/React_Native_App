@@ -15,11 +15,16 @@ export const ListContainer = () => {
   setdeletedItems([...deletedItems, itemDeleted])
   }
   function deleteItem(itemId) {
-    const filterItems = dataBase.filter((item) => item.id != itemId)
-    const itemDeleted = dataBase.filter(item => item.id === itemId )
-    handleDeletedItems(itemDeleted[0])
-    
-    setDataBase(filterItems)
+    if (viewDeleted) {
+      
+    } else {
+      
+      const filterItems = dataBase.filter((item) => item.id != itemId)
+      const itemDeleted = dataBase.filter(item => item.id === itemId )
+      handleDeletedItems(itemDeleted[0])
+      
+      setDataBase(filterItems)
+    }
     
     
   }
