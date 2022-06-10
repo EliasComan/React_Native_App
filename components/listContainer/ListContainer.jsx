@@ -21,6 +21,7 @@ export const ListContainer = () => {
     
     setDataBase(filterItems)
     
+    
   }
   function handleViews() {
     setViewDeleted(!viewDeleted)
