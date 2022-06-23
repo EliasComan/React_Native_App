@@ -1,14 +1,14 @@
-import { ListContainer } from '../listContainer/ListContainer';
+import { ListContainer } from '../collections/Collections';
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native'
 
-function List( ) {
+function List( {navigation } ) {
   return(
 
-      <View style={{marginTop:40}} >
+      <View  >
           <StatusBar style="auto" />
-          <ListContainer />
+          <ListContainer navigation={navigation} />
       </View>
     )
 }
