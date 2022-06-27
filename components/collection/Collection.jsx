@@ -2,7 +2,7 @@ import { FlatList, Image, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 import {products} from '../../database/products'
-import { styles } from './Collections.Styles'
+import { styles } from './collection.Styles'
 
 const Collection = ({route}) => {
     const {categoryID} = route.params

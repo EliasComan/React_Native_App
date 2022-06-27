@@ -2,7 +2,7 @@ import { Button, FlatList, Image, Text, TouchableOpacity, View } from 'react-nat
 import React, { useEffect, useState } from 'react'
 
 import { Collections } from '../../database/collections'
-import { styles } from './collectionsStyles'
+import { styles } from './collections.Styles'
 
 export const ListContainer = ({ navigation }) => {
   const [dataBase, setDataBase] = useState(Collections)

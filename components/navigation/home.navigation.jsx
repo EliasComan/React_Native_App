@@ -6,16 +6,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator();
 
-const Navigation = () => {
+const HomeNavigation = () => {
   return (
-    <NavigationContainer>
         <Stack.Navigator initialRouteName='Home'>
             <Stack.Screen name='All collections' component={List}/>
             <Stack.Screen name='Collection' component={Collection} />
         </Stack.Navigator>
-    </NavigationContainer>
 
   )
 }
 
-export default Navigation
+export default HomeNavigation

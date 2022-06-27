@@ -1,10 +1,11 @@
+import HomeNavigation from './components/navigation/home.navigation';
 import List from './components/lista/List';
-import Navigation from './components/navigation/navigation';
+import Tabs from './components/navigation/tabs';
 
 export default function App() {
   
   return (
-    <Navigation/>
+      <Tabs/>
   );
 }
 
