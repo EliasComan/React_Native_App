@@ -8,8 +8,8 @@ const boottomTabs = createBottomTabNavigator();
 
 const Tabs = () => {
   return (
-    <NavigationContainer>
-        <boottomTabs.Navigator initialRouteName='ShopTab'>
+    <NavigationContainer >
+        <boottomTabs.Navigator initialRouteName='ShopTab'screenOptions={{headerShown:false}} >
             <boottomTabs.Screen name='ShopTab' component={HomeNavigation}/>
             <boottomTabs.Screen name='CartShopTab' component={CartNavigation}/>
         </boottomTabs.Navigator>
