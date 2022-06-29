@@ -1,9 +1,15 @@
+import {FlatList, View}from 'react-native'
+
 import React from 'react'
-import {Text}from 'react-native'
+import { cartDB } from '../../database/cart.db'
+import collectionItem from '../collectionItem/collectionItem'
 
 const Cart = () => {
   return (
-  <Text>Cart</Text>
+    <View>
+      
+      <FlatList data={cartDB} renderItem={collectionItem}/>
+    </View>
   
     )
 }

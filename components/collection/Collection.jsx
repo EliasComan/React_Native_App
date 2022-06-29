@@ -1,9 +1,9 @@
-import { FlatList, Image, Text, View } from 'react-native'
+import { FlatList, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 
+import collectionItem from '../collectionItem/collectionItem'
 import { filteredProducts } from '../../store/actions/products.actions'
-import { styles } from './collection.Styles'
 
 const Collection = () => {
     const dispatch = useDispatch()
@@ -16,23 +16,9 @@ const Collection = () => {
         setProductsfiltered(data)
     },[])
 
-    const setProducts = ({item}) => {
-        return(
-            <View style={styles.container}>
-                <View>
-                    <Image  style={styles.image}source={{uri:item.thumbnail}}/>
-                </View>
-                <View style={styles.cards}>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.numbers}>{item.price} USD</Text>
-                </View>
-                
-            </View>
-        )
-    }
   return (
     <View>
-        <FlatList data={productsfiltered} renderItem={setProducts}/>
+        <FlatList data={productsfiltered} renderItem={collectionItem}/>
     </View>
   )
 }
