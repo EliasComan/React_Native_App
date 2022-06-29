@@ -1,16 +1,19 @@
 import { FlatList, Image, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 
-import {products} from '../../database/products'
+import { filteredProducts } from '../../store/actions/products.actions'
 import { styles } from './collection.Styles'
 
-const Collection = ({route}) => {
-    const {categoryID} = route.params
-    const [productsfiltered, setProductsfiltered] = useState([])
-
+const Collection = () => {
+    const dispatch = useDispatch()
+    const selectedcategory = useSelector(state => state.collections.selected.id)
+    const [ productsfiltered, setProductsfiltered ] = useState([])
+    const data = useSelector(state => state.products.filter)
+    
     useEffect( ()=> {
-        const producsFilter = products.filter(item =>item.categoryID === categoryID)
-        setProductsfiltered(producsFilter)
+        dispatch(filteredProducts(selectedcategory))
+        setProductsfiltered(data)
     },[])
 
     const setProducts = ({item}) => {

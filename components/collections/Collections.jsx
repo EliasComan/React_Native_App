@@ -1,16 +1,25 @@
-import { Button, FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { Collections } from '../../database/collections'
+import React from 'react'
+import { selectedCollection } from '../../store/actions/collections.actions'
 import { styles } from './collections.Styles'
 
 export const ListContainer = ({ navigation }) => {
-  const [dataBase, setDataBase] = useState(Collections)
+  const collections = useSelector(state  => state.collections.collections)
+  const dispatch = useDispatch()
   
  function setItems({ item }) {
-    return (
+  return (
       <View  key={item.id} >
-        <TouchableOpacity style={styles.taskContainer} onPress={()=> navigation.navigate('Collection',{categoryID:item.id})}>
+        <TouchableOpacity style={styles.taskContainer}
+           onPress={()=>
+            dispatch(
+              selectedCollection(item.id),
+              navigation.navigate('Collection',{categoryID:item.id}
+            )
+            
+            )}>
             <Image style={styles.Image} source={{ uri: item.miniatura }} />
            <View style={styles.container}>
             <Image style={styles.Miniatura} source={{uri:item.portada}}/>
@@ -24,7 +33,7 @@ export const ListContainer = ({ navigation }) => {
   
   return (
     <View styles={styles.views}>
-        <FlatList data={dataBase}  renderItem={setItems} />
+        <FlatList data={collections}  renderItem={setItems} />
     </View>
       
   )

@@ -38,11 +38,11 @@ const Tabs = () => {
                     
                     <View>
                       {focused ? 
-                      <Ionicons name="cart" size={24} color="black" />
+                      <Ionicons name="cart" size={22} color="black" />
                       :
-                      <Ionicons name="cart-outline" size={24} color="black" />
+                      <Ionicons name="cart-outline" size={22} color="black" />
                     } 
-                        <Text>Shop</Text>
+                        <Text>Cart</Text>
                     </View>
                     )
             }}
