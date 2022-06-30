@@ -1,6 +1,6 @@
 import Collection from '../collection/Collection';
+import ItemDetail from '../itemDetail/itemDetail';
 import List from '../lista/List';
-import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
@@ -11,6 +11,7 @@ const HomeNavigation = () => {
         <Stack.Navigator initialRouteName='Home'>
             <Stack.Screen name='All collections' component={List}/>
             <Stack.Screen name='Collection' component={Collection} />
+            <Stack.Screen name = 'ItemDetail' component={ItemDetail}/>
         </Stack.Navigator>
 
   )
