@@ -7,8 +7,9 @@ import { useDispatch } from 'react-redux'
 
 const CollectionItem = ({item, navigation}) => {
   const dispatch = useDispatch()
+ 
   return (
-    <TouchableOpacity onPress={()=> navigation.navigate('ItemDetail')}>
+    <TouchableOpacity onPress={()=> navigation.navigate('ItemDetail', {item:item})}>
         <View style={styles.container}>
         <View>
             <Image  style={styles.image}source={{uri:item.thumbnail}}/>

@@ -8,7 +8,7 @@ const initialState = {
     total:0
 }
 const total =  (list) => {
-    list.map(item => item.quantity * item.price)
+return    list.map(item => item.quantity * item.price)
         .reduce((a,b) => a+b,0)
 }
 
