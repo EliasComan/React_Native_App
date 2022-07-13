@@ -17,7 +17,6 @@ const CollectionItem = ({item, navigation}) => {
         <View style={styles.cards}>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.numbers}>{item.price} USD</Text>
-            <Button title='Add to cart'  onPress={() => dispatch(AddtoCart(item))}/>
         </View>
         <View>
         </View>

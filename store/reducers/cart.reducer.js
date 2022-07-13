@@ -1,4 +1,3 @@
-import { cartDB } from "../../database/cart.db"
 import { cartTypes } from "../types/cart.types"
 
 const {REMOVE_ITEM, ADD_TO_CART, CONFIRM_CART} = cartTypes
@@ -39,6 +38,8 @@ export const cartReducer = (state= initialState, action) => {
                 items: filteredItems,
                 total: total(filteredItems)
             }
+        case CONFIRM_CART:
+            console.log('confirm')
         default:
             return state
     }

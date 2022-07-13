@@ -15,6 +15,7 @@ const CartItem = ({item, RemoveItem}) => {
                 <View style={styles.cards}>
                     <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.numbers}>{item.price} USD</Text>
+                    <Text>Cantidad: {item.quantity}</Text>
                 <Button title='Delete'  onPress={() =>dispatch(RemoveItem(item.id))}/>
                 </View>
                 <View>
